@@ -1,0 +1,174 @@
+{
+  "stations": [
+    {
+      "name": "SomaFM Groove Salad",
+      "url": "https://ice2.somafm.com/groovesalad-128-mp3",
+      "frequency": "88.1"
+    },
+    {
+      "name": "SomaFM Lush",
+      "url": "https://ice2.somafm.com/lush-128-mp3",
+      "frequency": "89.3"
+    },
+    {
+      "name": "SomaFM Space Station",
+      "url": "https://ice2.somafm.com/spacestation-128-mp3",
+      "frequency": "90.5"
+    },
+    {
+      "name": "SomaFM Drone Zone",
+      "url": "https://ice2.somafm.com/dronezone-128-mp3",
+      "frequency": "91.7"
+    },
+    {
+      "name": "SomaFM Indie Pop",
+      "url": "https://ice2.somafm.com/indiepop-128-mp3",
+      "frequency": "93.9"
+    },
+    {
+      "name": "SomaFM Secret Agent",
+      "url": "https://ice2.somafm.com/secretagent-128-mp3",
+      "frequency": "95.1"
+    },
+    {
+      "name": "Radio Paradise (Main)",
+      "url": "https://stream.radioparadise.com/aac-128",
+      "frequency": "96.3"
+    },
+    {
+      "name": "Chillhop Radio",
+      "url": "https://stream.chillhop.com/live",
+      "frequency": "98.5"
+    },
+    {
+      "name": "Smooth Jazz 24/7",
+      "url": "https://stream.smoothjazz.com/smoothjazz",
+      "frequency": "99.7"
+    },
+    {
+      "name": "BBC World Service",
+      "url": "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
+      "frequency": "101.1"
+    },
+    {
+      "name": "102.1 FM",
+      "url": "https://ice2.somafm.com/defcon-128-mp3",
+      "frequency": "102.1"
+    },
+    {
+      "name": "NPR",
+      "url": "http://npr-ice.streamguys1.com/live.mp3",
+      "frequency": "102.9"
+    },
+    {
+      "name": "103.7 FM",
+      "url": "https://ice2.somafm.com/fluid-128-mp3",
+      "frequency": "103.7"
+    },
+    {
+      "name": "104.9 FM",
+      "url": "https://ice2.somafm.com/illstreet-128-mp3",
+      "frequency": "104.9"
+    },
+    {
+      "name": "106.1 FM",
+      "url": "https://ice2.somafm.com/beatblender-128-mp3",
+      "frequency": "106.1"
+    },
+    {
+      "name": "Classical Music",
+      "url": "http://c24.stream.publicradio.org/c24.mp3",
+      "frequency": "107.1"
+    },
+    {
+      "name": "KROQ 106.7 (Los Angeles)",
+      "url": "https://live.amperwave.net/playlist/audacy-kroqfmaac-imc.m3u",
+      "frequency": "106.7"
+    },
+    {
+      "name": "ALT 103.7 (DFW)",
+      "url": "https://live.amperwave.net/playlist/audacy-kvilfmaac-imc.m3u",
+      "frequency": "103.7"
+    },
+    {
+      "name": "Star 102.1 (DFW)",
+      "url": "https://stream.revma.ihrhls.com/zc2815",
+      "frequency": "102.1"
+    },
+    {
+      "name": "KISS FM 106.1 (DFW)",
+      "url": "https://stream.revma.ihrhls.com/zc2245",
+      "frequency": "106.1"
+    },
+    {
+      "name": "KERA 90.1 (DFW)",
+      "url": "https://kera.streamguys1.com/keralive",
+      "frequency": "90.1"
+    },
+    {
+      "name": "WRR 101.1 (DFW)",
+      "url": "https://kera-ice.streamguys1.com/wrrlive-aac",
+      "frequency": "101.1"
+    },
+    {
+      "name": "KXT 91.7 (DFW)",
+      "url": "https://kera.streamguys1.com/kxtlive128",
+      "frequency": "91.7"
+    },
+    {
+      "name": "BBC Radio 1 (UK)",
+      "url": "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one",
+      "frequency": "98.9"
+    },
+    {
+      "name": "WXPN (Philadelphia)",
+      "url": "https://wxpn.streamguys1.com/wxpn",
+      "frequency": "88.5"
+    },
+    {
+      "name": "Z100 (New York)",
+      "url": "https://stream.revma.ihrhls.com/zc1469",
+      "frequency": "100.3"
+    },
+    {
+      "name": "KIIS-FM (Los Angeles)",
+      "url": "https://stream.revma.ihrhls.com/zc185",
+      "frequency": "102.7"
+    },
+    {
+      "name": "WSM (Nashville)",
+      "url": "http://stream01048.westreamradio.com/wsm-am-mp3.m3u",
+      "frequency": "650"
+    },
+    {
+      "name": "The Highway (country)",
+      "url": "http://stream01048.westreamradio.com/wsm-am-mp3.m3u",
+      "frequency": "99.5"
+    },
+    {
+      "name": "WNYC (New York)",
+      "url": "https://fm939.wnyc.org/wnycfm",
+      "frequency": "93.9"
+    },
+    {
+      "name": "ESPN Radio",
+      "url": "https://espn.akamaized.net/espn/espnradio/espnradio/playlist.m3u8",
+      "frequency": "105.1"
+    },
+    {
+      "name": "WFAN (New York)",
+      "url": "http://live.amperwave.net/direct/audacy-wfanamaac-imc",
+      "frequency": "101.9"
+    },
+    {
+      "name": "KEXP (Seattle)",
+      "url": "https://kexp.streamguys1.com/kexp160.aac",
+      "frequency": "90.3"
+    },
+    {
+      "name": "Hits 1 (pop)",
+      "url": "https://ice2.somafm.com/indiepop-128-mp3",
+      "frequency": "104.1"
+    }
+  ]
+}
