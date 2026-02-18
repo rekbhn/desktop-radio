@@ -48,6 +48,12 @@ def load_stations():
         return []
 
 
+def save_stations(stations):
+    """Save station list to JSON."""
+    with open(STATIONS_FILE, "w", encoding="utf-8") as f:
+        json.dump({"stations": stations}, f, indent=2)
+
+
 class FMRadioApp:
     def __init__(self):
         self.root = tk.Tk()
@@ -79,6 +85,8 @@ class FMRadioApp:
         if self.stations:
             self._update_display()
 
+        self.root.bind("<Up>", lambda e: self._prev_station())
+        self.root.bind("<Down>", lambda e: self._next_station())
         self.root.protocol("WM_DELETE_WINDOW", self._on_closing)
 
     def _show_vlc_error(self):
@@ -178,6 +186,12 @@ class FMRadioApp:
         list_header = tk.Frame(main, bg=BG_DARK)
         list_header.pack(fill=tk.X, pady=(16, 6))
         tk.Label(list_header, text="STATIONS", font=("Consolas", 9), fg=TEXT_DIM, bg=BG_DARK).pack(side=tk.LEFT)
+        tk.Button(
+            list_header, text="Remove", font=("Consolas", 9),
+            bg=BG_PANEL, fg=TEXT_DIM, activebackground=STOP_BG, activeforeground=TEXT,
+            relief=tk.FLAT, padx=10, pady=2, cursor="hand2",
+            command=self._delete_station
+        ).pack(side=tk.RIGHT)
         tk.Frame(list_header, height=1, bg=BORDER).pack(fill=tk.X, pady=(4, 0))
         list_outer = tk.Frame(main, bg=BORDER, padx=1, pady=1)
         list_outer.pack(fill=tk.BOTH, expand=True)
@@ -302,6 +316,31 @@ class FMRadioApp:
             if was_playing:
                 self._toggle_play()
                 self._toggle_play()
+
+    def _delete_station(self):
+        """Remove the currently selected station from the list and save to file."""
+        if not self.stations:
+            return
+        idx = self.current_index
+        if idx < 0 or idx >= len(self.stations):
+            return
+        name = self.stations[idx].get("name", "Unknown")
+        if not messagebox.askyesno("Remove station", f"Remove \"{name}\" from the list?"):
+            return
+        was_playing = self.player and self.player.is_playing()
+        if was_playing:
+            self.player.stop()
+            self.play_btn.config(text="▶ PLAY")
+        self.stations.pop(idx)
+        save_stations(self.stations)
+        if not self.stations:
+            self.current_index = 0
+            self.freq_label.config(text="—")
+            self.station_label.config(text="— No station —")
+        else:
+            self.current_index = min(idx, len(self.stations) - 1)
+            self._update_display()
+        self._fill_listbox()
 
     def _on_closing(self):
         if self.player:
