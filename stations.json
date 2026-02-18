@@ -36,6 +36,11 @@
       "frequency": "91.7"
     },
     {
+      "name": "93.7 The Bull (St. Louis)",
+      "url": "https://stream.revma.ihrhls.com/zc1293",
+      "frequency": "93.7"
+    },
+    {
       "name": "SomaFM Indie Pop",
       "url": "https://ice2.somafm.com/indiepop-128-mp3",
       "frequency": "93.9"
@@ -66,6 +71,11 @@
       "frequency": "97.1"
     },
     {
+      "name": "iHeartCountry",
+      "url": "https://stream.revma.ihrhls.com/zc4418",
+      "frequency": "97.5"
+    },
+    {
       "name": "KISS Radio (Today's Hits)",
       "url": "https://stream.revma.ihrhls.com/zc7362",
       "frequency": "98.1"
@@ -74,11 +84,6 @@
       "name": "SomaFM Sonic Universe (Jazz)",
       "url": "https://ice2.somafm.com/sonicuniverse-128-mp3",
       "frequency": "99.3"
-    },
-    {
-      "name": "The Highway (country)",
-      "url": "http://stream01048.westreamradio.com/wsm-am-mp3.m3u",
-      "frequency": "99.5"
     },
     {
       "name": "Smooth Jazz 24/7",
@@ -126,6 +131,11 @@
       "frequency": "102.9"
     },
     {
+      "name": "V-103 (Atlanta)",
+      "url": "http://live.amperwave.net/direct/audacy-wveefmaac-imc",
+      "frequency": "103.3"
+    },
+    {
       "name": "KISS FM 103.5 (Chicago)",
       "url": "https://stream.revma.ihrhls.com/zc849",
       "frequency": "103.5"
@@ -146,9 +156,19 @@
       "frequency": "104.1"
     },
     {
+      "name": "Hip Hop Beats (iHeart)",
+      "url": "https://stream.revma.ihrhls.com/zc4429",
+      "frequency": "104.3"
+    },
+    {
       "name": "104.9 FM",
       "url": "https://ice2.somafm.com/illstreet-128-mp3",
       "frequency": "104.9"
+    },
+    {
+      "name": "Power 105.1 (New York)",
+      "url": "https://stream.revma.ihrhls.com/zc1481",
+      "frequency": "105.1"
     },
     {
       "name": "106.1 FM",
