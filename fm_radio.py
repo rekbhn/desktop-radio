@@ -6,18 +6,23 @@ Requires VLC media player to be installed: https://www.videolan.org/vlc/
 
 import json
 import os
+import threading
 import tkinter as tk
-from tkinter import ttk, messagebox
+from datetime import datetime
 from pathlib import Path
+from tkinter import ttk, messagebox
+from urllib.request import Request, urlopen
 
 try:
-    import vlc
+    import vlc  # type: ignore[import-untyped]
 except ImportError:
     vlc = None
 
 # Paths
 APP_DIR = Path(__file__).resolve().parent
 STATIONS_FILE = APP_DIR / "stations.json"
+RECORDINGS_DIR = APP_DIR / "Recordings"
+RECORD_CHUNK_SIZE = 8192
 
 # Subtle, muted theme (no neon)
 BG_DARK = "#1a1d24"
@@ -67,6 +72,11 @@ class FMRadioApp:
         self.player = None
         self.instance = None
         self._volume = 80
+        self._recording = False
+        self._recording_stop = threading.Event()
+        self._recording_thread = None
+        self._recording_path = None
+        RECORDINGS_DIR.mkdir(exist_ok=True)
 
         if vlc is None:
             self._show_vlc_error()
@@ -85,9 +95,12 @@ class FMRadioApp:
         if self.stations:
             self._update_display()
 
-        self.root.bind("<Up>", lambda e: self._prev_station())
-        self.root.bind("<Down>", lambda e: self._next_station())
+        self.root.bind_all("<Up>", self._on_up_key)
+        self.root.bind_all("<Down>", self._on_down_key)
+        self.root.bind_all("<Left>", self._on_left_key)
+        self.root.bind_all("<Right>", self._on_right_key)
         self.root.protocol("WM_DELETE_WINDOW", self._on_closing)
+        self.root.focus_set()
 
     def _show_vlc_error(self):
         messagebox.showerror(
@@ -165,6 +178,20 @@ class FMRadioApp:
             command=self._stop
         )
         self.stop_btn.pack(side=tk.LEFT, padx=4)
+        self.rec_btn = tk.Button(
+            play_frame, text="● REC", font=("Consolas", 10, "bold"),
+            bg=BG_PANEL, fg=TEXT, activebackground=BORDER_ACCENT, activeforeground=BG_DARK,
+            relief=tk.FLAT, padx=16, pady=8, cursor="hand2",
+            command=self._toggle_record
+        )
+        self.rec_btn.pack(side=tk.LEFT, padx=4)
+        rec_status_frame = tk.Frame(main, bg=BG_DARK)
+        rec_status_frame.pack(fill=tk.X)
+        self.rec_status_label = tk.Label(
+            rec_status_frame, text="", font=("Consolas", 9),
+            fg=TEXT_DIM, bg=BG_DARK
+        )
+        self.rec_status_label.pack(anchor=tk.W)
 
         # Volume
         vol_frame = tk.Frame(main, bg=BG_DARK)
@@ -209,6 +236,9 @@ class FMRadioApp:
         scrollbar.config(command=self.listbox.yview)
         self.listbox.bind("<<ListboxSelect>>", self._on_station_select)
         self.listbox.bind("<Double-1>", lambda e: self._toggle_play())
+        # Bind Up/Down on listbox so they work when listbox has focus (e.g. on Windows)
+        self.listbox.bind("<Up>", self._on_up_key)
+        self.listbox.bind("<Down>", self._on_down_key)
 
         self._fill_listbox()
 
@@ -274,6 +304,88 @@ class FMRadioApp:
             self.player.stop()
             self.play_btn.config(text="▶ PLAY")
 
+    def _record_worker(self, url: str, path: Path):
+        """Background thread: stream URL to file until stop is requested."""
+        try:
+            req = Request(url, headers={"User-Agent": "FM-Radio-Recorder/1.0"})
+            with urlopen(req, timeout=15) as resp:
+                try:
+                    if hasattr(resp, "fp") and getattr(resp.fp, "raw", None) is not None:
+                        resp.fp.raw.sock.settimeout(10.0)
+                except (AttributeError, OSError):
+                    pass
+                with open(path, "wb") as f:
+                    while not self._recording_stop.is_set():
+                        try:
+                            chunk = resp.read(RECORD_CHUNK_SIZE)
+                            if not chunk:
+                                break
+                            f.write(chunk)
+                        except (OSError, ConnectionError, TimeoutError):
+                            break
+        except Exception as e:
+            if self._recording and self.rec_status_label.winfo_exists():
+                self._recording_path = None
+                try:
+                    path.unlink(missing_ok=True)
+                except OSError:
+                    pass
+                self.root.after(0, lambda: self._show_recording_error(str(e)))
+        finally:
+            self.root.after(0, self._on_recording_finished)
+
+    def _show_recording_error(self, msg: str):
+        messagebox.showerror("Recording error", f"Recording failed.\n\n{msg}")
+        self._recording = False
+        self._update_recording_ui()
+
+    def _on_recording_finished(self):
+        self._recording = False
+        self._recording_thread = None
+        self._update_recording_ui()
+        if self._recording_path and self._recording_path.exists() and self._recording_path.stat().st_size > 0:
+            messagebox.showinfo("Recording saved", f"Saved to:\n{self._recording_path}")
+
+    def _update_recording_ui(self):
+        if not hasattr(self, "rec_btn") or not self.rec_btn.winfo_exists():
+            return
+        if self._recording:
+            self.rec_btn.config(text="■ STOP REC", bg=STOP_BG, fg=STOP_FG)
+            self.rec_status_label.config(text=f"Recording: {self._recording_path.name if self._recording_path else '…'}", fg=ACCENT)
+        else:
+            self.rec_btn.config(text="● REC", bg=BG_PANEL, fg=TEXT)
+            self.rec_status_label.config(text="", fg=TEXT_DIM)
+
+    def _toggle_record(self):
+        if self._recording:
+            self._stop_recording()
+            return
+        station = self._get_station()
+        if not station:
+            messagebox.showwarning("No station", "Select a station first.")
+            return
+        url = station.get("url")
+        if not url:
+            messagebox.showwarning("No URL", "This station has no stream URL.")
+            return
+        safe_name = "".join(c if c.isalnum() or c in " .-_" else "_" for c in station.get("name", "station"))[:40]
+        ext = ".mp3" if "mp3" in url.lower() or "mpeg" in url.lower() else ".aac" if "aac" in url.lower() else ".mp3"
+        stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        self._recording_path = RECORDINGS_DIR / f"record_{stamp}_{safe_name.strip()}{ext}"
+        self._recording_stop.clear()
+        self._recording = True
+        self._recording_thread = threading.Thread(
+            target=self._record_worker,
+            args=(url, self._recording_path),
+            daemon=True,
+        )
+        self._recording_thread.start()
+        self._update_recording_ui()
+
+    def _stop_recording(self):
+        self._recording_stop.set()
+        self._update_recording_ui()
+
     def _on_volume(self, value):
         try:
             v = int(float(value))
@@ -283,6 +395,22 @@ class FMRadioApp:
                 self.player.audio_set_volume(self._volume)
         except (ValueError, TypeError):
             pass
+
+    def _on_up_key(self, event=None):
+        self._prev_station()
+        return "break"
+
+    def _on_down_key(self, event=None):
+        self._next_station()
+        return "break"
+
+    def _on_left_key(self, event=None):
+        self._prev_station()
+        return "break"
+
+    def _on_right_key(self, event=None):
+        self._next_station()
+        return "break"
 
     def _prev_station(self):
         if not self.stations:
