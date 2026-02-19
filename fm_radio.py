@@ -99,6 +99,7 @@ class FMRadioApp:
         self.root.bind_all("<Down>", self._on_down_key)
         self.root.bind_all("<Left>", self._on_left_key)
         self.root.bind_all("<Right>", self._on_right_key)
+        self.root.bind_all("<Return>", self._on_enter_key)
         self.root.protocol("WM_DELETE_WINDOW", self._on_closing)
         self.root.focus_set()
 
@@ -239,6 +240,7 @@ class FMRadioApp:
         # Bind Up/Down on listbox so they work when listbox has focus (e.g. on Windows)
         self.listbox.bind("<Up>", self._on_up_key)
         self.listbox.bind("<Down>", self._on_down_key)
+        self.listbox.bind("<Return>", self._on_enter_key)
 
         self._fill_listbox()
 
@@ -412,6 +414,20 @@ class FMRadioApp:
         self._next_station()
         return "break"
 
+    def _on_enter_key(self, event=None):
+        self._play_current_station()
+        return "break"
+
+    def _play_current_station(self):
+        """Start or restart playback of the currently selected station."""
+        if not self.player or not self.stations:
+            return
+        if self.player.is_playing():
+            self._toggle_play()
+            self._toggle_play()
+        else:
+            self._toggle_play()
+
     def _prev_station(self):
         if not self.stations:
             return
@@ -438,12 +454,9 @@ class FMRadioApp:
             return
         idx = int(sel[0])
         if 0 <= idx < len(self.stations):
-            was_playing = self.player and self.player.is_playing()
             self.current_index = idx
             self._update_display()
-            if was_playing:
-                self._toggle_play()
-                self._toggle_play()
+            self._play_current_station()
 
     def _delete_station(self):
         """Remove the currently selected station from the list and save to file."""
