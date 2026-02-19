@@ -21,7 +21,7 @@ Requires **VLC media player** to be installed for playback.
 2. **Create a virtual environment (optional but recommended)**
 
    ```bash
-   cd radio
+   cd desktop-radio
    python -m venv venv
    venv\Scripts\activate
    ```
@@ -67,3 +67,4 @@ Stations are defined in `stations.json`. You can add or edit entries:
 ## License
 
 Use and modify freely.
+
