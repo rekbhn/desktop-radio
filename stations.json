@@ -229,6 +229,61 @@
       "name": "KRLD NewsRadio 1080 (DFW)",
       "url": "http://live.amperwave.net/direct/audacy-krldamaac-imc",
       "frequency": "1080"
+    },
+    {
+      "name": "Radio Paradise (eclectic)",
+      "url": "http://stream-tx3.radioparadise.com/mp3-192",
+      "frequency": "92.5"
+    },
+    {
+      "name": "FIP (France \u2013 jazz/world)",
+      "url": "https://icecast.radiofrance.fr/fip-midfi.mp3?id=radiofrance",
+      "frequency": "105.1"
+    },
+    {
+      "name": "FIP Pop (France)",
+      "url": "https://icecast.radiofrance.fr/fippop-midfi.mp3?id=radiofrance",
+      "frequency": "105.3"
+    },
+    {
+      "name": "The Current (Minneapolis)",
+      "url": "https://current.stream.publicradio.org/kcmp.aac",
+      "frequency": "89.3"
+    },
+    {
+      "name": "SomaFM Folk Forward",
+      "url": "https://ice2.somafm.com/folkfwd-128-mp3",
+      "frequency": "92.1"
+    },
+    {
+      "name": "SomaFM Metal Detector",
+      "url": "https://ice2.somafm.com/metal-128-mp3",
+      "frequency": "92.3"
+    },
+    {
+      "name": "SomaFM Suburbs of Goa",
+      "url": "https://ice2.somafm.com/suburbsofgoa-128-mp3",
+      "frequency": "93.1"
+    },
+    {
+      "name": "SomaFM Deep Space One",
+      "url": "https://ice2.somafm.com/deepspaceone-128-mp3",
+      "frequency": "94.1"
+    },
+    {
+      "name": "SomaFM Mission Control",
+      "url": "https://ice2.somafm.com/missioncontrol-128-mp3",
+      "frequency": "94.3"
+    },
+    {
+      "name": "SomaFM Covers",
+      "url": "https://ice2.somafm.com/covers-128-mp3",
+      "frequency": "95.5"
+    },
+    {
+      "name": "SomaFM Cliqhop (IDM/electronic)",
+      "url": "https://ice2.somafm.com/cliqhop-128-mp3",
+      "frequency": "95.7"
     }
   ]
 }
