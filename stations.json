@@ -11,6 +11,21 @@
       "frequency": "88.1"
     },
     {
+      "name": "WBGO 88.3 (Newark, NJ)",
+      "url": "https://ais-sa8.cdnstream1.com/3629_128.mp3",
+      "frequency": "88.3"
+    },
+    {
+      "name": "WBGO TOO HD2 (Newark, NJ)",
+      "url": "https://ais-sa8.cdnstream1.com/3630_128.mp3",
+      "frequency": "88.5"
+    },
+    {
+      "name": "WPR Music (Wisconsin Public Radio)",
+      "url": "https://wpr-ice.streamguys1.com/wpr-music-mp3-96",
+      "frequency": "88.7"
+    },
+    {
       "name": "SomaFM Lush",
       "url": "https://ice2.somafm.com/lush-128-mp3",
       "frequency": "89.3"
@@ -24,6 +39,11 @@
       "name": "The Current (Minneapolis)",
       "url": "https://current.stream.publicradio.org/kcmp.aac",
       "frequency": "89.3"
+    },
+    {
+      "name": "WUWM 89.7 (Milwaukee, WI)",
+      "url": "https://www.tundracast.stream:3040/mount3",
+      "frequency": "89.7"
     },
     {
       "name": "KERA 90.1 (DFW)",
@@ -48,6 +68,11 @@
     {
       "name": "KEXP (Seattle) 320k",
       "url": "https://kexp.streamguys1.com/kexp320.mp3",
+      "frequency": "90.9"
+    },
+    {
+      "name": "WPR News (Wisconsin Public Radio)",
+      "url": "https://wpr-ice.streamguys1.com/wpr-ideas-mp3-64",
       "frequency": "90.9"
     },
     {
