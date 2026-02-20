@@ -6,6 +6,8 @@ Requires VLC media player to be installed: https://www.videolan.org/vlc/
 
 import json
 import os
+import random
+import sys
 import threading
 import tkinter as tk
 from datetime import datetime
@@ -18,8 +20,11 @@ try:
 except ImportError:
     vlc = None
 
-# Paths
-APP_DIR = Path(__file__).resolve().parent
+# Paths (when frozen by PyInstaller, use exe directory so stations.json lives next to exe)
+if getattr(sys, "frozen", False):
+    APP_DIR = Path(sys.executable).resolve().parent
+else:
+    APP_DIR = Path(__file__).resolve().parent
 STATIONS_FILE = APP_DIR / "stations.json"
 RECORDINGS_DIR = APP_DIR / "Recordings"
 RECORD_CHUNK_SIZE = 8192
@@ -43,6 +48,15 @@ BORDER_ACCENT = "#5b7c85"
 
 def load_stations():
     """Load station list from JSON."""
+    # When frozen, copy bundled stations.json to exe dir if missing (first run)
+    if getattr(sys, "frozen", False) and not STATIONS_FILE.exists():
+        bundled = Path(sys._MEIPASS) / "stations.json"
+        if bundled.exists():
+            try:
+                import shutil
+                shutil.copy2(bundled, STATIONS_FILE)
+            except OSError:
+                pass
     if not STATIONS_FILE.exists():
         return []
     try:
@@ -68,6 +82,7 @@ class FMRadioApp:
         self.root.configure(bg=BG_DARK)
 
         self.stations = load_stations()
+        self.filtered_indices = list(range(len(self.stations)))
         self.current_index = 0
         self.player = None
         self.instance = None
@@ -155,7 +170,11 @@ class FMRadioApp:
         controls.pack(pady=14)
         tune_frame = tk.Frame(controls, bg=BG_DARK)
         tune_frame.pack(side=tk.LEFT, padx=(0, 20))
-        for label, cmd in [("◀ PREV", self._prev_station), ("NEXT ▶", self._next_station)]:
+        for label, cmd in [
+            ("◀ PREV", self._prev_station),
+            ("NEXT ▶", self._next_station),
+            ("🎲 RANDOM", self._random_station),
+        ]:
             btn = tk.Button(
                 tune_frame, text=label, font=("Consolas", 10, "bold"),
                 bg=BG_PANEL, fg=TEXT, activebackground=BORDER_ACCENT, activeforeground=BG_DARK,
@@ -210,10 +229,33 @@ class FMRadioApp:
         )
         self.vol_value_label.pack(side=tk.LEFT)
 
+        # Search box (on top of playlist)
+        search_frame = tk.Frame(main, bg=BG_DARK)
+        search_frame.pack(fill=tk.X, pady=(16, 6))
+        tk.Label(
+            search_frame, text="Search", font=("Consolas", 9),
+            fg=TEXT_DIM, bg=BG_DARK, width=6, anchor=tk.W
+        ).pack(side=tk.LEFT)
+        self.search_var = tk.StringVar()
+        self.search_var.trace_add("write", lambda *a: self._on_search())
+        self.search_entry = tk.Entry(
+            search_frame, textvariable=self.search_var, font=("Segoe UI", 10),
+            bg=BG_DISPLAY, fg=TEXT, insertbackground=TEXT,
+            relief=tk.FLAT, bd=0, highlightthickness=1, highlightbackground=BORDER,
+            highlightcolor=BORDER_ACCENT
+        )
+        self.search_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(8, 0), ipady=6, ipadx=8)
+
         # Station list
         list_header = tk.Frame(main, bg=BG_DARK)
         list_header.pack(fill=tk.X, pady=(16, 6))
         tk.Label(list_header, text="STATIONS", font=("Consolas", 9), fg=TEXT_DIM, bg=BG_DARK).pack(side=tk.LEFT)
+        tk.Button(
+            list_header, text="Add", font=("Consolas", 9),
+            bg=BG_PANEL, fg=TEXT_DIM, activebackground=BORDER_ACCENT, activeforeground=BG_DARK,
+            relief=tk.FLAT, padx=10, pady=2, cursor="hand2",
+            command=self._add_station
+        ).pack(side=tk.RIGHT, padx=(0, 6))
         tk.Button(
             list_header, text="Remove", font=("Consolas", 9),
             bg=BG_PANEL, fg=TEXT_DIM, activebackground=STOP_BG, activeforeground=TEXT,
@@ -260,13 +302,29 @@ class FMRadioApp:
         except tk.TclError:
             pass
 
+    def _on_search(self):
+        self._fill_listbox()
+        if self.filtered_indices and self.current_index not in self.filtered_indices:
+            self.current_index = self.filtered_indices[0]
+            self._update_display()
+
     def _fill_listbox(self):
+        q = (getattr(self, "search_var", None) and self.search_var.get() or "").strip().lower()
+        if not q:
+            self.filtered_indices = list(range(len(self.stations)))
+        else:
+            self.filtered_indices = [
+                i for i, s in enumerate(self.stations)
+                if q in (s.get("name") or "").lower() or q in str(s.get("frequency", ""))
+            ]
         self.listbox.delete(0, tk.END)
-        for i, s in enumerate(self.stations):
+        for idx in self.filtered_indices:
+            s = self.stations[idx]
             self.listbox.insert(tk.END, f"  {s.get('frequency', '??')}  {s.get('name', 'Unknown')}")
-        if self.stations and 0 <= self.current_index < len(self.stations):
-            self.listbox.selection_set(self.current_index)
-            self.listbox.see(self.current_index)
+        if self.filtered_indices and self.current_index in self.filtered_indices:
+            listbox_idx = self.filtered_indices.index(self.current_index)
+            self.listbox.selection_set(listbox_idx)
+            self.listbox.see(listbox_idx)
 
     def _update_display(self):
         if not self.stations or self.current_index < 0 or self.current_index >= len(self.stations):
@@ -274,7 +332,14 @@ class FMRadioApp:
         s = self.stations[self.current_index]
         self.freq_label.config(text=s.get("frequency", "—"))
         self.station_label.config(text=s.get("name", "—"))
-        self._fill_listbox()
+        # Only sync listbox selection; don't rebuild the list (avoids flicker/rearrange on click)
+        if self.listbox.size() == len(self.filtered_indices) and self.current_index in self.filtered_indices:
+            self.listbox.selection_clear(0, tk.END)
+            listbox_idx = self.filtered_indices.index(self.current_index)
+            self.listbox.selection_set(listbox_idx)
+            self.listbox.see(listbox_idx)
+        else:
+            self._fill_listbox()
 
     def _get_station(self):
         if not self.stations or self.current_index < 0 or self.current_index >= len(self.stations):
@@ -429,34 +494,132 @@ class FMRadioApp:
             self._toggle_play()
 
     def _prev_station(self):
-        if not self.stations:
+        if not self.filtered_indices:
             return
         was_playing = self.player and self.player.is_playing()
-        self.current_index = (self.current_index - 1) % len(self.stations)
+        pos = self.filtered_indices.index(self.current_index) if self.current_index in self.filtered_indices else 0
+        new_pos = (pos - 1) % len(self.filtered_indices)
+        self.current_index = self.filtered_indices[new_pos]
         self._update_display()
         if was_playing:
             self._toggle_play()
             self._toggle_play()
 
     def _next_station(self):
-        if not self.stations:
+        if not self.filtered_indices:
             return
         was_playing = self.player and self.player.is_playing()
-        self.current_index = (self.current_index + 1) % len(self.stations)
+        pos = self.filtered_indices.index(self.current_index) if self.current_index in self.filtered_indices else 0
+        new_pos = (pos + 1) % len(self.filtered_indices)
+        self.current_index = self.filtered_indices[new_pos]
         self._update_display()
         if was_playing:
             self._toggle_play()
+            self._toggle_play()
+
+    def _random_station(self):
+        """Pick a random station and start playing it."""
+        if not self.filtered_indices:
+            return
+        n = len(self.filtered_indices)
+        if n == 1:
+            idx = self.filtered_indices[0]
+        else:
+            candidates = [i for i in self.filtered_indices if i != self.current_index]
+            idx = random.choice(candidates) if candidates else self.filtered_indices[0]
+        self.current_index = idx
+        self._update_display()
+        # Start playing (or restart if already playing)
+        if self.player and self.player.is_playing():
+            self._toggle_play()
+            self._toggle_play()
+        else:
             self._toggle_play()
 
     def _on_station_select(self, event):
         sel = self.listbox.curselection()
         if not sel:
             return
-        idx = int(sel[0])
-        if 0 <= idx < len(self.stations):
-            self.current_index = idx
+        listbox_idx = int(sel[0])
+        if 0 <= listbox_idx < len(self.filtered_indices):
+            self.current_index = self.filtered_indices[listbox_idx]
             self._update_display()
             self._play_current_station()
+
+    def _add_station(self):
+        """Open a dialog to add a new station (name, URL, frequency) and save."""
+        dialog = tk.Toplevel(self.root)
+        dialog.title("Add station")
+        dialog.configure(bg=BG_DARK)
+        dialog.transient(self.root)
+        dialog.grab_set()
+        dialog.geometry("360x180")
+        dialog.resizable(False, False)
+
+        main_dlg = tk.Frame(dialog, bg=BG_DARK, padx=20, pady=16)
+        main_dlg.pack(fill=tk.BOTH, expand=True)
+
+        def make_row(label_text, default=""):
+            row = tk.Frame(main_dlg, bg=BG_DARK)
+            row.pack(fill=tk.X, pady=6)
+            tk.Label(row, text=label_text, font=("Consolas", 9), fg=TEXT_DIM, bg=BG_DARK, width=10, anchor=tk.W).pack(side=tk.LEFT)
+            entry = tk.Entry(row, font=("Segoe UI", 10), bg=BG_DISPLAY, fg=TEXT, insertbackground=TEXT, relief=tk.FLAT, bd=0, highlightthickness=1, highlightbackground=BORDER, highlightcolor=BORDER_ACCENT)
+            entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(8, 0), ipady=4, ipadx=6)
+            entry.insert(0, default)
+            return entry
+
+        name_entry = make_row("Name", "")
+        url_entry = make_row("URL", "https://")
+        freq_entry = make_row("Frequency", "98.5")
+
+        result = {"ok": False}
+
+        def on_ok():
+            name = name_entry.get().strip()
+            url = url_entry.get().strip()
+            freq = freq_entry.get().strip() or "—"
+            if not name:
+                messagebox.showwarning("Add station", "Please enter a station name.", parent=dialog)
+                return
+            if not url:
+                messagebox.showwarning("Add station", "Please enter a stream URL.", parent=dialog)
+                return
+            if not url.startswith(("http://", "https://")):
+                messagebox.showwarning("Add station", "URL must start with http:// or https://", parent=dialog)
+                return
+            result["ok"] = True
+            self.stations.append({"name": name, "url": url, "frequency": freq})
+            save_stations(self.stations)
+            self.current_index = len(self.stations) - 1
+            self._update_display()
+            self._fill_listbox()
+            dialog.destroy()
+
+        def on_cancel():
+            dialog.destroy()
+
+        btn_row = tk.Frame(main_dlg, bg=BG_DARK)
+        btn_row.pack(fill=tk.X, pady=(16, 0))
+        tk.Button(
+            btn_row, text="Cancel", font=("Consolas", 9),
+            bg=BG_PANEL, fg=TEXT_DIM, activebackground=BORDER_ACCENT, activeforeground=BG_DARK,
+            relief=tk.FLAT, padx=14, pady=6, cursor="hand2",
+            command=on_cancel
+        ).pack(side=tk.RIGHT, padx=4)
+        tk.Button(
+            btn_row, text="Add", font=("Consolas", 9, "bold"),
+            bg=PLAY_BG, fg=PLAY_FG, activebackground=ACCENT_DIM, activeforeground=PLAY_FG,
+            relief=tk.FLAT, padx=14, pady=6, cursor="hand2",
+            command=on_ok
+        ).pack(side=tk.RIGHT)
+
+        dialog.protocol("WM_DELETE_WINDOW", on_cancel)
+        dialog.update_idletasks()
+        x = self.root.winfo_x() + (self.root.winfo_width() - dialog.winfo_reqwidth()) // 2
+        y = self.root.winfo_y() + (self.root.winfo_height() - dialog.winfo_reqheight()) // 2
+        dialog.geometry(f"+{max(0, x)}+{max(0, y)}")
+        name_entry.focus_set()
+        dialog.wait_window()
 
     def _delete_station(self):
         """Remove the currently selected station from the list and save to file."""
