@@ -1,344 +1,2851 @@
 {
   "stations": [
     {
+      "genre": "eclectic",
+      "format": "streaming",
+      "location": {
+        "city": "London",
+        "state": "",
+        "country": "GB"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 1,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "NTS Radio (London)",
-      "url": "https://stream-relay-geo.ntslive.net/stream",
-      "frequency": "87.7"
+      "frequency": "87.7",
+      "url": "https://stream-relay-geo.ntslive.net/stream"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 2,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Groove Salad",
-      "url": "https://ice2.somafm.com/groovesalad-128-mp3",
-      "frequency": "88.1"
+      "frequency": "88.1",
+      "url": "https://ice2.somafm.com/groovesalad-128-mp3"
     },
     {
+      "genre": "jazz",
+      "format": "fm",
+      "location": {
+        "city": "Newark",
+        "state": "NJ",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "jazz"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 3,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WBGO 88.3 (Newark, NJ)",
-      "url": "https://ais-sa8.cdnstream1.com/3629_128.mp3",
-      "frequency": "88.3"
+      "frequency": "88.3",
+      "url": "https://ais-sa8.cdnstream1.com/3629_128.mp3"
     },
     {
+      "genre": "jazz",
+      "format": "fm",
+      "location": {
+        "city": "Newark",
+        "state": "NJ",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "hd",
+        "jazz"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 4,
+      "band": "FM",
+      "hdChannel": "HD2",
+      "priority": 1,
       "name": "WBGO TOO HD2 (Newark, NJ)",
-      "url": "https://ais-sa8.cdnstream1.com/3630_128.mp3",
-      "frequency": "88.5"
+      "frequency": "88.5",
+      "url": "https://ais-sa8.cdnstream1.com/3630_128.mp3"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "Madison",
+        "state": "WI",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 96,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "public",
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 5,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WPR Music (Wisconsin Public Radio)",
-      "url": "https://wpr-ice.streamguys1.com/wpr-music-mp3-96",
-      "frequency": "88.7"
+      "frequency": "88.7",
+      "url": "https://wpr-ice.streamguys1.com/wpr-music-mp3-96"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 6,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Lush",
-      "url": "https://ice2.somafm.com/lush-128-mp3",
-      "frequency": "89.3"
+      "frequency": "89.3",
+      "url": "https://ice2.somafm.com/lush-128-mp3"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 7,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KNON 89.3 (DFW)",
-      "url": "https://s11.citrus3.com:2020/public/knon893fm",
-      "frequency": "89.3"
+      "frequency": "89.3",
+      "url": "https://s11.citrus3.com:2020/public/knon893fm"
     },
     {
+      "genre": "alternative",
+      "format": "fm",
+      "location": {
+        "city": "Minneapolis",
+        "state": "MN",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "alternative"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 8,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "The Current (Minneapolis)",
-      "url": "https://current.stream.publicradio.org/kcmp.aac",
-      "frequency": "89.3"
+      "frequency": "89.3",
+      "url": "https://current.stream.publicradio.org/kcmp.aac"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 9,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WUWM 89.7 (Milwaukee, WI)",
-      "url": "https://www.tundracast.stream:3040/mount3",
-      "frequency": "89.7"
+      "frequency": "89.7",
+      "url": "https://www.tundracast.stream:3040/mount3"
     },
     {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "public",
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 10,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KERA 90.1 (DFW)",
-      "url": "https://kera.streamguys1.com/keralive",
-      "frequency": "90.1"
+      "frequency": "90.1",
+      "url": "https://kera.streamguys1.com/keralive"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "Seattle",
+        "state": "WA",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 160,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 11,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KEXP (Seattle)",
-      "url": "https://kexp.streamguys1.com/kexp160.aac",
-      "frequency": "90.3"
+      "frequency": "90.3",
+      "url": "https://kexp.streamguys1.com/kexp160.aac"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 12,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Space Station",
-      "url": "https://ice2.somafm.com/spacestation-128-mp3",
-      "frequency": "90.5"
+      "frequency": "90.5",
+      "url": "https://ice2.somafm.com/spacestation-128-mp3"
     },
     {
+      "genre": "world",
+      "format": "fm",
+      "location": {
+        "city": "Cologne",
+        "state": "",
+        "country": "DE"
+      },
+      "language": "de",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "world"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 13,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Deutschlandfunk (Germany)",
-      "url": "https://st01.dlf.de/dlf/01/128/mp3/stream.mp3",
-      "frequency": "90.7"
+      "frequency": "90.7",
+      "url": "https://st01.dlf.de/dlf/01/128/mp3/stream.mp3"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "Seattle",
+        "state": "WA",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 320,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 14,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KEXP (Seattle) 320k",
-      "url": "https://kexp.streamguys1.com/kexp320.mp3",
-      "frequency": "90.9"
+      "frequency": "90.9",
+      "url": "https://kexp.streamguys1.com/kexp320.mp3"
     },
     {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "Madison",
+        "state": "WI",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 64,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "public",
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 15,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WPR News (Wisconsin Public Radio)",
-      "url": "https://wpr-ice.streamguys1.com/wpr-ideas-mp3-64",
-      "frequency": "90.9"
+      "frequency": "90.9",
+      "url": "https://wpr-ice.streamguys1.com/wpr-ideas-mp3-64"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 16,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WFMU (Freeform)",
-      "url": "https://stream0.wfmu.org/freeform-128k",
-      "frequency": "91.1"
+      "frequency": "91.1",
+      "url": "https://stream0.wfmu.org/freeform-128k"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 17,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Drone Zone",
-      "url": "https://ice2.somafm.com/dronezone-128-mp3",
-      "frequency": "91.7"
+      "frequency": "91.7",
+      "url": "https://ice2.somafm.com/dronezone-128-mp3"
     },
     {
+      "genre": "alternative",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "Independent music discovery station",
+      "tags": [
+        "indie",
+        "local",
+        "alternative"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "https://kxt.org",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 18,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KXT 91.7 (DFW)",
-      "url": "https://kera.streamguys1.com/kxtlive128",
-      "frequency": "91.7"
+      "frequency": "91.7",
+      "url": "https://kera.streamguys1.com/kxtlive128"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 19,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Folk Forward",
-      "url": "https://ice2.somafm.com/folkfwd-128-mp3",
-      "frequency": "92.1"
+      "frequency": "92.1",
+      "url": "https://ice2.somafm.com/folkfwd-128-mp3"
     },
     {
+      "genre": "rock",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "rock"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 20,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Metal Detector",
-      "url": "https://ice2.somafm.com/metal-128-mp3",
-      "frequency": "92.3"
+      "frequency": "92.3",
+      "url": "https://ice2.somafm.com/metal-128-mp3"
     },
     {
+      "genre": "eclectic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 192,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 21,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Radio Paradise (eclectic)",
-      "url": "http://stream-tx3.radioparadise.com/mp3-192",
-      "frequency": "92.5"
+      "frequency": "92.5",
+      "url": "http://stream-tx3.radioparadise.com/mp3-192"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 22,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Suburbs of Goa",
-      "url": "https://ice2.somafm.com/suburbsofgoa-128-mp3",
-      "frequency": "93.1"
+      "frequency": "93.1",
+      "url": "https://ice2.somafm.com/suburbsofgoa-128-mp3"
     },
     {
+      "genre": "rock",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "rock"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "shoutcast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 23,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "93.3 The Bone / Hot 93.3 (DFW)",
-      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KLFFFMAAC.aac",
-      "frequency": "93.3"
+      "frequency": "93.3",
+      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KLFFFMAAC.aac"
     },
     {
+      "genre": "country",
+      "format": "fm",
+      "location": {
+        "city": "St. Louis",
+        "state": "MO",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "country"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 24,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "93.7 The Bull (St. Louis)",
-      "url": "https://stream.revma.ihrhls.com/zc1293",
-      "frequency": "93.7"
+      "frequency": "93.7",
+      "url": "https://stream.revma.ihrhls.com/zc1293"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 25,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Indie Pop",
-      "url": "https://ice2.somafm.com/indiepop-128-mp3",
-      "frequency": "93.9"
+      "frequency": "93.9",
+      "url": "https://ice2.somafm.com/indiepop-128-mp3"
     },
     {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 26,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WNYC (New York)",
-      "url": "https://fm939.wnyc.org/wnycfm",
-      "frequency": "93.9"
+      "frequency": "93.9",
+      "url": "https://fm939.wnyc.org/wnycfm"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 27,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Deep Space One",
-      "url": "https://ice2.somafm.com/deepspaceone-128-mp3",
-      "frequency": "94.1"
+      "frequency": "94.1",
+      "url": "https://ice2.somafm.com/deepspaceone-128-mp3"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 28,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Mission Control",
-      "url": "https://ice2.somafm.com/missioncontrol-128-mp3",
-      "frequency": "94.3"
+      "frequency": "94.3",
+      "url": "https://ice2.somafm.com/missioncontrol-128-mp3"
     },
     {
+      "genre": "rock",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "rock"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 29,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Left Coast 70s (Rock)",
-      "url": "https://ice2.somafm.com/seventies-128-mp3",
-      "frequency": "94.7"
+      "frequency": "94.7",
+      "url": "https://ice2.somafm.com/seventies-128-mp3"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 30,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Secret Agent",
-      "url": "https://ice2.somafm.com/secretagent-128-mp3",
-      "frequency": "95.1"
+      "frequency": "95.1",
+      "url": "https://ice2.somafm.com/secretagent-128-mp3"
     },
     {
+      "genre": "country",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "country"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 31,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KHYI 95.3 The Range (DFW)",
-      "url": "https://khyi.com",
-      "frequency": "95.3"
+      "frequency": "95.3",
+      "url": "https://khyi.com"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 32,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Covers",
-      "url": "https://ice2.somafm.com/covers-128-mp3",
-      "frequency": "95.5"
+      "frequency": "95.5",
+      "url": "https://ice2.somafm.com/covers-128-mp3"
     },
     {
+      "genre": "world",
+      "format": "fm",
+      "location": {
+        "city": "Paris",
+        "state": "",
+        "country": "FR"
+      },
+      "language": "fr",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "world"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 33,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "France Culture",
-      "url": "http://icecast.radiofrance.fr/franceculture-midfi.mp3",
-      "frequency": "95.5"
+      "frequency": "95.5",
+      "url": "http://icecast.radiofrance.fr/franceculture-midfi.mp3"
     },
     {
+      "genre": "electronic",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "electronic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 34,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Cliqhop (IDM/electronic)",
-      "url": "https://ice2.somafm.com/cliqhop-128-mp3",
-      "frequency": "95.7"
+      "frequency": "95.7",
+      "url": "https://ice2.somafm.com/cliqhop-128-mp3"
     },
     {
+      "genre": "world",
+      "format": "fm",
+      "location": {
+        "city": "Paris",
+        "state": "",
+        "country": "FR"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "world"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 35,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Radio Nova (Paris)",
-      "url": "https://novazz.ice.infomaniak.ch/novazz-128.mp3",
-      "frequency": "95.9"
+      "frequency": "95.9",
+      "url": "https://novazz.ice.infomaniak.ch/novazz-128.mp3"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "Pittsburgh",
+        "state": "PA",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 36,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KISS FM 96.1 (Pittsburgh)",
-      "url": "https://stream.revma.ihrhls.com/zc2021",
-      "frequency": "96.1"
+      "frequency": "96.1",
+      "url": "https://stream.revma.ihrhls.com/zc2021"
     },
     {
+      "genre": "country",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "country"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "shoutcast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 37,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "New Country 96.3 (DFW)",
-      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KSCSFMAAC.aac",
-      "frequency": "96.3"
+      "frequency": "96.3",
+      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KSCSFMAAC.aac"
     },
     {
+      "genre": "rock",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "rock"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 38,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Boot Liquor (Americana Rock)",
-      "url": "https://ice2.somafm.com/bootliquor-128-mp3",
-      "frequency": "97.1"
+      "frequency": "97.1",
+      "url": "https://ice2.somafm.com/bootliquor-128-mp3"
     },
     {
+      "genre": "rock",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "rock"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 39,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "97.1 KEGL The Eagle (DFW)",
-      "url": "https://stream.revma.ihrhls.com/zc2241",
-      "frequency": "97.1"
+      "frequency": "97.1",
+      "url": "https://stream.revma.ihrhls.com/zc2241"
     },
     {
+      "genre": "country",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "country"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 40,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "iHeartCountry",
-      "url": "https://stream.revma.ihrhls.com/zc4418",
-      "frequency": "97.5"
+      "frequency": "97.5",
+      "url": "https://stream.revma.ihrhls.com/zc4418"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 41,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KISS Radio (Today's Hits)",
-      "url": "https://stream.revma.ihrhls.com/zc7362",
-      "frequency": "98.1"
+      "frequency": "98.1",
+      "url": "https://stream.revma.ihrhls.com/zc7362"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 42,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "98.7 The Spot KSPF (DFW)",
-      "url": "http://live.amperwave.net/direct/audacy-kspffmaac-imc",
-      "frequency": "98.7"
+      "frequency": "98.7",
+      "url": "http://live.amperwave.net/direct/audacy-kspffmaac-imc"
     },
     {
+      "genre": "jazz",
+      "format": "streaming",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "internet",
+        "jazz"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 43,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "SomaFM Sonic Universe (Jazz)",
-      "url": "https://ice2.somafm.com/sonicuniverse-128-mp3",
-      "frequency": "99.3"
+      "frequency": "99.3",
+      "url": "https://ice2.somafm.com/sonicuniverse-128-mp3"
     },
     {
+      "genre": "country",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "country"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "shoutcast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 44,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "99.5 The Wolf (DFW)",
-      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KPLXFMAAC.aac",
-      "frequency": "99.5"
+      "frequency": "99.5",
+      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KPLXFMAAC.aac"
     },
     {
+      "genre": "jazz",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "jazz"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 45,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Smooth Jazz 24/7",
-      "url": "http://smoothjazz.cdnstream1.com/2585_128.mp3",
-      "frequency": "99.7"
+      "frequency": "99.7",
+      "url": "http://smoothjazz.cdnstream1.com/2585_128.mp3"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 46,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Z100 (New York)",
-      "url": "https://stream.revma.ihrhls.com/zc1469",
-      "frequency": "100.3"
+      "frequency": "100.3",
+      "url": "https://stream.revma.ihrhls.com/zc1469"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 47,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "100.3 Jack FM (DFW)",
-      "url": "http://live.amperwave.net/direct/audacy-kjkkfmaac-imc",
-      "frequency": "100.3"
+      "frequency": "100.3",
+      "url": "http://live.amperwave.net/direct/audacy-kjkkfmaac-imc"
     },
     {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 48,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "BBC World Service",
-      "url": "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
-      "frequency": "101.1"
+      "frequency": "101.1",
+      "url": "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service"
     },
     {
+      "genre": "classical",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "classical"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 49,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WRR 101.1 (DFW)",
-      "url": "https://kera-ice.streamguys1.com/wrrlive-aac",
-      "frequency": "101.1"
+      "frequency": "101.1",
+      "url": "https://kera-ice.streamguys1.com/wrrlive-aac"
     },
     {
+      "genre": "sports",
+      "format": "fm",
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "sports"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 50,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "WFAN (New York)",
-      "url": "http://live.amperwave.net/direct/audacy-wfanamaac-imc",
-      "frequency": "101.9"
+      "frequency": "101.9",
+      "url": "http://live.amperwave.net/direct/audacy-wfanamaac-imc"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 51,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "102.1 FM",
-      "url": "https://ice2.somafm.com/defcon-128-mp3",
-      "frequency": "102.1"
+      "frequency": "102.1",
+      "url": "https://ice2.somafm.com/defcon-128-mp3"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 52,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Star 102.1 FM",
-      "url": "https://stream.revma.ihrhls.com/zc2815",
-      "frequency": "102.1"
+      "frequency": "102.1",
+      "url": "https://stream.revma.ihrhls.com/zc2815"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 53,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KIIS-FM (Los Angeles)",
-      "url": "https://stream.revma.ihrhls.com/zc185",
-      "frequency": "102.7"
+      "frequency": "102.7",
+      "url": "https://stream.revma.ihrhls.com/zc185"
     },
     {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "public",
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 54,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "NPR",
-      "url": "http://npr-ice.streamguys1.com/live.mp3",
-      "frequency": "102.9"
+      "frequency": "102.9",
+      "url": "http://npr-ice.streamguys1.com/live.mp3"
     },
     {
+      "genre": "hip-hop",
+      "format": "fm",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "hip-hop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 55,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "V-103 (Atlanta)",
-      "url": "http://live.amperwave.net/direct/audacy-wveefmaac-imc",
-      "frequency": "103.3"
+      "frequency": "103.3",
+      "url": "http://live.amperwave.net/direct/audacy-wveefmaac-imc"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "Chicago",
+        "state": "IL",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 56,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KISS FM 103.5 (Chicago)",
-      "url": "https://stream.revma.ihrhls.com/zc849",
-      "frequency": "103.5"
+      "frequency": "103.5",
+      "url": "https://stream.revma.ihrhls.com/zc849"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 57,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "103.7 FM",
-      "url": "https://ice2.somafm.com/fluid-128-mp3",
-      "frequency": "103.7"
+      "frequency": "103.7",
+      "url": "https://ice2.somafm.com/fluid-128-mp3"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 58,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "ALT 103.7 (DFW)",
-      "url": "http://live.amperwave.net/direct/audacy-kvilfmaac-imc",
-      "frequency": "103.7"
+      "frequency": "103.7",
+      "url": "http://live.amperwave.net/direct/audacy-kvilfmaac-imc"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 59,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Hits 1 (pop)",
-      "url": "https://ice2.somafm.com/indiepop-128-mp3",
-      "frequency": "104.1"
+      "frequency": "104.1",
+      "url": "https://ice2.somafm.com/indiepop-128-mp3"
     },
     {
+      "genre": "hip-hop",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "hip-hop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 60,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Hip Hop Beats (iHeart)",
-      "url": "https://stream.revma.ihrhls.com/zc4429",
-      "frequency": "104.3"
+      "frequency": "104.3",
+      "url": "https://stream.revma.ihrhls.com/zc4429"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 61,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "104.9 FM",
-      "url": "https://ice2.somafm.com/illstreet-128-mp3",
-      "frequency": "104.9"
+      "frequency": "104.9",
+      "url": "https://ice2.somafm.com/illstreet-128-mp3"
     },
     {
+      "genre": "hip-hop",
+      "format": "fm",
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "hip-hop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 62,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "Power 105.1 (New York)",
-      "url": "https://stream.revma.ihrhls.com/zc1481",
-      "frequency": "105.1"
+      "frequency": "105.1",
+      "url": "https://stream.revma.ihrhls.com/zc1481"
     },
     {
-      "name": "FIP (France – jazz/world)",
-      "url": "https://icecast.radiofrance.fr/fip-midfi.mp3?id=radiofrance",
-      "frequency": "105.1"
+      "genre": "jazz",
+      "format": "fm",
+      "location": {
+        "city": "Paris",
+        "state": "",
+        "country": "FR"
+      },
+      "language": "fr",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "jazz"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 63,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
+      "name": "FIP (France \u2013 jazz/world)",
+      "frequency": "105.1",
+      "url": "https://icecast.radiofrance.fr/fip-midfi.mp3?id=radiofrance"
     },
     {
+      "genre": "sports",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "sports"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 64,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "105.3 The Fan (DFW)",
-      "url": "http://live.amperwave.net/direct/audacy-krldfmaac-imc",
-      "frequency": "105.3"
+      "frequency": "105.3",
+      "url": "http://live.amperwave.net/direct/audacy-krldfmaac-imc"
     },
     {
+      "genre": "jazz",
+      "format": "fm",
+      "location": {
+        "city": "Paris",
+        "state": "",
+        "country": "FR"
+      },
+      "language": "fr",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "jazz"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 65,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "FIP Pop (France)",
-      "url": "https://icecast.radiofrance.fr/fippop-midfi.mp3?id=radiofrance",
-      "frequency": "105.3"
+      "frequency": "105.3",
+      "url": "https://icecast.radiofrance.fr/fippop-midfi.mp3?id=radiofrance"
     },
     {
+      "genre": "eclectic",
+      "format": "fm",
+      "location": {
+        "city": "",
+        "state": "",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "eclectic"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 66,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "106.1 FM",
-      "url": "https://ice2.somafm.com/beatblender-128-mp3",
-      "frequency": "106.1"
+      "frequency": "106.1",
+      "url": "https://ice2.somafm.com/beatblender-128-mp3"
     },
     {
+      "genre": "pop",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "pop"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "hls",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 67,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KISS FM 106.1 (DFW)",
-      "url": "https://stream.revma.ihrhls.com/zc2245",
-      "frequency": "106.1"
+      "frequency": "106.1",
+      "url": "https://stream.revma.ihrhls.com/zc2245"
     },
     {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 68,
+      "band": "AM",
+      "hdChannel": "",
+      "priority": 1,
       "name": "KRLD NewsRadio 1080 (DFW)",
-      "url": "http://live.amperwave.net/direct/audacy-krldamaac-imc",
-      "frequency": "1080"
+      "frequency": "1080",
+      "url": "http://live.amperwave.net/direct/audacy-krldamaac-imc"
+    },
+    {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "shoutcast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 69,
+      "band": "AM",
+      "hdChannel": "",
+      "priority": 1,
+      "name": "1310 The Ticket KTCK (DFW)",
+      "frequency": "1310",
+      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KTCKAMAAC.aac"
+    },
+    {
+      "genre": "alternative",
+      "format": "fm",
+      "location": {
+        "city": "San Diego",
+        "state": "CA",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "alternative"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "https://www.audacy.com/stations/alt949",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 70,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
+      "name": "Alt 94.9 (San Diego)",
+      "frequency": "94.9",
+      "url": "http://live.amperwave.net/direct/audacy-kbztfmaac-imc"
+    },
+    {
+      "genre": "alternative",
+      "format": "fm",
+      "location": {
+        "city": "Detroit",
+        "state": "MI",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "alternative"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "https://www.audacy.com/stations/alt987detroit",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 71,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
+      "name": "Alt 98.7 (Detroit)",
+      "frequency": "98.7",
+      "url": "http://live.amperwave.net/direct/audacy-wdzhfmaac-imc"
+    },
+    {
+      "genre": "rock",
+      "format": "fm",
+      "location": {
+        "city": "Denver",
+        "state": "CO",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "aac",
+      "logo": "",
+      "description": "",
+      "tags": [
+        "local",
+        "rock"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "https://www.audacy.com/995themountain",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 72,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
+      "name": "99.5 The Mountain (Denver)",
+      "frequency": "99.5",
+      "url": "http://live.amperwave.net/direct/audacy-kqmtfmaac-imc"
     }
   ]
 }

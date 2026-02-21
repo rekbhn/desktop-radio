@@ -62,7 +62,15 @@ def load_stations():
     try:
         with open(STATIONS_FILE, encoding="utf-8") as f:
             data = json.load(f)
-        return data.get("stations", [])
+        raw = data.get("stations", [])
+        defaults = default_station_metadata()
+        out = []
+        for i, s in enumerate(raw):
+            merged = {**defaults, **s}
+            if merged.get("dialPosition", 0) == 0:
+                merged["dialPosition"] = i + 1
+            out.append(merged)
+        return out
     except (json.JSONDecodeError, OSError):
         return []
 
@@ -71,6 +79,37 @@ def save_stations(stations):
     """Save station list to JSON."""
     with open(STATIONS_FILE, "w", encoding="utf-8") as f:
         json.dump({"stations": stations}, f, indent=2)
+
+
+def default_station_metadata():
+    """Return default values for enhanced station metadata (for new stations)."""
+    return {
+        "genre": "",
+        "format": "streaming",
+        "location": {"city": "", "state": "", "country": "US"},
+        "language": "en",
+        "bitrate": None,
+        "codec": "",
+        "logo": "",
+        "description": "",
+        "tags": [],
+        "favorite": False,
+        "lastPlayed": None,
+        "popularity": None,
+        "streamType": "icecast",
+        "isLive": True,
+        "fallbackUrls": [],
+        "status": "unknown",
+        "latencyMs": None,
+        "nowPlaying": None,
+        "scheduleUrl": "",
+        "website": "",
+        "socials": {"twitter": "", "instagram": ""},
+        "dialPosition": 0,
+        "band": "FM",
+        "hdChannel": "",
+        "priority": 1,
+    }
 
 
 class FMRadioApp:
@@ -91,6 +130,7 @@ class FMRadioApp:
         self._recording_stop = threading.Event()
         self._recording_thread = None
         self._recording_path = None
+        self._filling_listbox = False
         RECORDINGS_DIR.mkdir(exist_ok=True)
 
         if vlc is None:
@@ -147,6 +187,22 @@ class FMRadioApp:
         display_outer.pack(fill=tk.X, pady=(0, 14))
         display_inner = tk.Frame(display_outer, bg=BG_DISPLAY, padx=20, pady=16)
         display_inner.pack(fill=tk.X)
+        # Wraplength for all display text so it wraps to new lines instead of cutting off
+        display_wraplength = 420
+
+        # Now Playing (compact, fixed height — single line, no resize)
+        now_playing_frame = tk.Frame(display_inner, bg=BG_DISPLAY)
+        now_playing_frame.pack(fill=tk.X, pady=(0, 4))
+        tk.Label(
+            now_playing_frame, text="Now Playing", font=("Consolas", 9),
+            fg=TEXT_DIM, bg=BG_DISPLAY
+        ).pack(anchor=tk.W)
+        # Single-line only: fixed height + no wrap so section never resizes
+        self.now_playing_label = tk.Label(
+            display_inner, text="", font=("Segoe UI", 10),
+            fg=GLOW, bg=BG_DISPLAY, height=1, width=48, anchor=tk.W, wraplength=0
+        )
+        self.now_playing_label.pack(anchor=tk.W)
 
         self.freq_label = tk.Label(
             display_inner, text="98.5", font=("Consolas", 36, "bold"),
@@ -161,7 +217,7 @@ class FMRadioApp:
 
         self.station_label = tk.Label(
             display_inner, text="— No station —", font=("Segoe UI", 11),
-            fg=TEXT_DIM, bg=BG_DISPLAY, wraplength=380
+            fg=TEXT_DIM, bg=BG_DISPLAY, wraplength=display_wraplength, justify=tk.LEFT
         )
         self.station_label.pack(anchor=tk.W)
 
@@ -261,7 +317,11 @@ class FMRadioApp:
             bg=BG_PANEL, fg=TEXT_DIM, activebackground=STOP_BG, activeforeground=TEXT,
             relief=tk.FLAT, padx=10, pady=2, cursor="hand2",
             command=self._delete_station
-        ).pack(side=tk.RIGHT)
+        ).pack(side=tk.RIGHT, padx=(0, 8))
+        self.station_count_label = tk.Label(
+            list_header, text="0 stations", font=("Consolas", 9), fg=TEXT_DIM, bg=BG_DARK
+        )
+        self.station_count_label.pack(side=tk.RIGHT)
         tk.Frame(list_header, height=1, bg=BORDER).pack(fill=tk.X, pady=(4, 0))
         list_outer = tk.Frame(main, bg=BORDER, padx=1, pady=1)
         list_outer.pack(fill=tk.BOTH, expand=True)
@@ -304,34 +364,85 @@ class FMRadioApp:
 
     def _on_search(self):
         self._fill_listbox()
-        if self.filtered_indices and self.current_index not in self.filtered_indices:
-            self.current_index = self.filtered_indices[0]
-            self._update_display()
+        # Do not change current_index or update Now Playing when typing in search—
+        # the display should only reflect the station that is actually selected/playing.
 
     def _fill_listbox(self):
         q = (getattr(self, "search_var", None) and self.search_var.get() or "").strip().lower()
         if not q:
             self.filtered_indices = list(range(len(self.stations)))
         else:
-            self.filtered_indices = [
-                i for i, s in enumerate(self.stations)
-                if q in (s.get("name") or "").lower() or q in str(s.get("frequency", ""))
-            ]
-        self.listbox.delete(0, tk.END)
-        for idx in self.filtered_indices:
-            s = self.stations[idx]
-            self.listbox.insert(tk.END, f"  {s.get('frequency', '??')}  {s.get('name', 'Unknown')}")
-        if self.filtered_indices and self.current_index in self.filtered_indices:
-            listbox_idx = self.filtered_indices.index(self.current_index)
-            self.listbox.selection_set(listbox_idx)
-            self.listbox.see(listbox_idx)
+            def matches(s):
+                if q in (s.get("name") or "").lower() or q in str(s.get("frequency", "")):
+                    return True
+                if q in (s.get("genre") or "").lower() or q in (s.get("description") or "").lower():
+                    return True
+                for tag in s.get("tags") or []:
+                    if q in (tag or "").lower():
+                        return True
+                loc = s.get("location") or {}
+                if isinstance(loc, dict):
+                    if q in (loc.get("city") or "").lower() or q in (loc.get("state") or "").lower():
+                        return True
+                return False
+            self.filtered_indices = [i for i, s in enumerate(self.stations) if matches(s)]
+        # Ignore selection events while rebuilding (they can fire with wrong index, e.g. 0)
+        self._filling_listbox = True
+        try:
+            self.listbox.delete(0, tk.END)
+            for idx in self.filtered_indices:
+                s = self.stations[idx]
+                self.listbox.insert(tk.END, f"  {s.get('frequency', '??')}  {s.get('name', 'Unknown')}")
+            if self.filtered_indices and self.current_index in self.filtered_indices:
+                listbox_idx = self.filtered_indices.index(self.current_index)
+                self.listbox.selection_set(listbox_idx)
+                self.listbox.see(listbox_idx)
+        finally:
+            self._filling_listbox = False
+        n = len(self.stations)
+        if hasattr(self, "station_count_label") and self.station_count_label.winfo_exists():
+            self.station_count_label.config(text=f"{n} station{'s' if n != 1 else ''}")
 
     def _update_display(self):
         if not self.stations or self.current_index < 0 or self.current_index >= len(self.stations):
             return
         s = self.stations[self.current_index]
         self.freq_label.config(text=s.get("frequency", "—"))
-        self.station_label.config(text=s.get("name", "—"))
+        # Now Playing from station metadata (title, artist, show)
+        np = s.get("nowPlaying")
+        if np and isinstance(np, dict):
+            title = (np.get("title") or "").strip()
+            artist = (np.get("artist") or "").strip()
+            show = (np.get("show") or "").strip()
+            parts = []
+            if artist and title:
+                parts.append(f"{artist} – {title}")
+            elif title:
+                parts.append(title)
+            if show:
+                parts.append(f"({show})")
+            now_text = "  ".join(parts) if parts else ""
+        else:
+            now_text = ""
+        # Keep Now Playing to one line so the section height never resizes
+        max_len = 47
+        if len(now_text) > max_len:
+            now_text = now_text[: max_len - 1].rstrip() + "…"
+        self.now_playing_label.config(text=now_text)
+        # Station name + genre/bitrate/description (wraps to new lines)
+        name = s.get("name", "—")
+        genre = (s.get("genre") or "").strip()
+        desc = (s.get("description") or "").strip()
+        bitrate = s.get("bitrate")
+        sub = []
+        if genre:
+            sub.append(genre)
+        if bitrate is not None:
+            sub.append(f"{bitrate} kbps")
+        if desc:
+            sub.append(desc)
+        display_text = name + ("  ·  " + "  ·  ".join(sub) if sub else "")
+        self.station_label.config(text=display_text)
         # Only sync listbox selection; don't rebuild the list (avoids flicker/rearrange on click)
         if self.listbox.size() == len(self.filtered_indices) and self.current_index in self.filtered_indices:
             self.listbox.selection_clear(0, tk.END)
@@ -537,14 +648,22 @@ class FMRadioApp:
             self._toggle_play()
 
     def _on_station_select(self, event):
+        # Ignore selection events fired during search/listbox rebuild (they use wrong index)
+        if getattr(self, "_filling_listbox", False):
+            return
         sel = self.listbox.curselection()
-        if not sel:
+        if not sel or not self.filtered_indices:
             return
         listbox_idx = int(sel[0])
-        if 0 <= listbox_idx < len(self.filtered_indices):
-            self.current_index = self.filtered_indices[listbox_idx]
+        if listbox_idx < 0 or listbox_idx >= len(self.filtered_indices):
+            return
+        new_index = self.filtered_indices[listbox_idx]
+        if new_index == self.current_index:
             self._update_display()
-            self._play_current_station()
+            return
+        self.current_index = new_index
+        self._update_display()
+        self._play_current_station()
 
     def _add_station(self):
         """Open a dialog to add a new station (name, URL, frequency) and save."""
@@ -588,7 +707,9 @@ class FMRadioApp:
                 messagebox.showwarning("Add station", "URL must start with http:// or https://", parent=dialog)
                 return
             result["ok"] = True
-            self.stations.append({"name": name, "url": url, "frequency": freq})
+            new_station = {"name": name, "url": url, "frequency": freq, **default_station_metadata()}
+            new_station["dialPosition"] = len(self.stations) + 1
+            self.stations.append(new_station)
             save_stations(self.stations)
             self.current_index = len(self.stations) - 1
             self._update_display()
@@ -641,6 +762,8 @@ class FMRadioApp:
             self.current_index = 0
             self.freq_label.config(text="—")
             self.station_label.config(text="— No station —")
+            if hasattr(self, "now_playing_label") and self.now_playing_label.winfo_exists():
+                self.now_playing_label.config(text="")
         else:
             self.current_index = min(idx, len(self.stations) - 1)
             self._update_display()
