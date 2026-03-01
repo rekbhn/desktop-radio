@@ -187,8 +187,6 @@ class FMRadioApp:
         display_outer.pack(fill=tk.X, pady=(0, 14))
         display_inner = tk.Frame(display_outer, bg=BG_DISPLAY, padx=20, pady=16)
         display_inner.pack(fill=tk.X)
-        # Wraplength for all display text so it wraps to new lines instead of cutting off
-        display_wraplength = 420
 
         # Now Playing (compact, fixed height — single line, no resize)
         now_playing_frame = tk.Frame(display_inner, bg=BG_DISPLAY)
@@ -200,7 +198,7 @@ class FMRadioApp:
         # Single-line only: fixed height + no wrap so section never resizes
         self.now_playing_label = tk.Label(
             display_inner, text="", font=("Segoe UI", 10),
-            fg=GLOW, bg=BG_DISPLAY, height=1, width=48, anchor=tk.W, wraplength=0
+            fg=GLOW, bg=BG_DISPLAY, height=1, anchor=tk.W, wraplength=0
         )
         self.now_playing_label.pack(anchor=tk.W)
 
@@ -217,7 +215,7 @@ class FMRadioApp:
 
         self.station_label = tk.Label(
             display_inner, text="— No station —", font=("Segoe UI", 11),
-            fg=TEXT_DIM, bg=BG_DISPLAY, wraplength=display_wraplength, justify=tk.LEFT
+            fg=TEXT_DIM, bg=BG_DISPLAY, height=1, anchor=tk.W, wraplength=0
         )
         self.station_label.pack(anchor=tk.W)
 
@@ -425,11 +423,11 @@ class FMRadioApp:
         else:
             now_text = ""
         # Keep Now Playing to one line so the section height never resizes
-        max_len = 47
-        if len(now_text) > max_len:
-            now_text = now_text[: max_len - 1].rstrip() + "…"
-        self.now_playing_label.config(text=now_text)
-        # Station name + genre/bitrate/description (wraps to new lines)
+        max_np_len = 52
+        if len(now_text) > max_np_len:
+            now_text = now_text[: max_np_len - 1].rstrip() + "…"
+        self.now_playing_label.config(text=now_text or " ")
+        # Station name + genre/bitrate/description — single line, no wrap (fixed height)
         name = s.get("name", "—")
         genre = (s.get("genre") or "").strip()
         desc = (s.get("description") or "").strip()
@@ -442,6 +440,9 @@ class FMRadioApp:
         if desc:
             sub.append(desc)
         display_text = name + ("  ·  " + "  ·  ".join(sub) if sub else "")
+        max_station_len = 56
+        if len(display_text) > max_station_len:
+            display_text = display_text[: max_station_len - 1].rstrip() + "…"
         self.station_label.config(text=display_text)
         # Only sync listbox selection; don't rebuild the list (avoids flicker/rearrange on click)
         if self.listbox.size() == len(self.filtered_indices) and self.current_index in self.filtered_indices:

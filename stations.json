@@ -159,6 +159,47 @@
       "url": "https://ais-sa8.cdnstream1.com/3630_128.mp3"
     },
     {
+      "genre": "news",
+      "format": "fm",
+      "location": {
+        "city": "Atlantic City",
+        "state": "NJ",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 128,
+      "codec": "mp3",
+      "logo": "",
+      "description": "NPR news and talk for New Jersey (simulcasts WHYY)",
+      "tags": [
+        "local",
+        "public",
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "https://www.whyy.org",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 74,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
+      "name": "WNJN 89.7 - Atlantic City (NPR)",
+      "frequency": "89.7",
+      "url": "https://whyy.streamguys1.com/whyy-mp3"
+    },
+    {
       "genre": "eclectic",
       "format": "fm",
       "location": {
@@ -237,46 +278,6 @@
       "name": "SomaFM Lush",
       "frequency": "89.3",
       "url": "https://ice2.somafm.com/lush-128-mp3"
-    },
-    {
-      "genre": "eclectic",
-      "format": "fm",
-      "location": {
-        "city": "Dallas",
-        "state": "TX",
-        "country": "US"
-      },
-      "language": "en",
-      "bitrate": 128,
-      "codec": "mp3",
-      "logo": "",
-      "description": "",
-      "tags": [
-        "local",
-        "eclectic"
-      ],
-      "favorite": false,
-      "lastPlayed": null,
-      "popularity": null,
-      "streamType": "icecast",
-      "isLive": true,
-      "fallbackUrls": [],
-      "status": "unknown",
-      "latencyMs": null,
-      "nowPlaying": null,
-      "scheduleUrl": "",
-      "website": "",
-      "socials": {
-        "twitter": "",
-        "instagram": ""
-      },
-      "dialPosition": 7,
-      "band": "FM",
-      "hdChannel": "",
-      "priority": 1,
-      "name": "KNON 89.3 (DFW)",
-      "frequency": "89.3",
-      "url": "https://s11.citrus3.com:2020/public/knon893fm"
     },
     {
       "genre": "alternative",
@@ -368,7 +369,7 @@
       "bitrate": 128,
       "codec": "mp3",
       "logo": "",
-      "description": "",
+      "description": "Dallas/Fort Worth NPR news and talk",
       "tags": [
         "local",
         "public",
@@ -384,7 +385,7 @@
       "latencyMs": null,
       "nowPlaying": null,
       "scheduleUrl": "",
-      "website": "",
+      "website": "https://www.kera.org",
       "socials": {
         "twitter": "",
         "instagram": ""
@@ -393,7 +394,7 @@
       "band": "FM",
       "hdChannel": "",
       "priority": 1,
-      "name": "KERA 90.1 (DFW)",
+      "name": "KERA 90.1 - Dallas (NPR)",
       "frequency": "90.1",
       "url": "https://kera.streamguys1.com/keralive"
     },
@@ -558,6 +559,47 @@
       "genre": "news",
       "format": "fm",
       "location": {
+        "city": "Seattle",
+        "state": "WA",
+        "country": "US"
+      },
+      "language": "en",
+      "bitrate": 96,
+      "codec": "mp3",
+      "logo": "",
+      "description": "Seattle's NPR station",
+      "tags": [
+        "local",
+        "public",
+        "news"
+      ],
+      "favorite": false,
+      "lastPlayed": null,
+      "popularity": null,
+      "streamType": "icecast",
+      "isLive": true,
+      "fallbackUrls": [],
+      "status": "unknown",
+      "latencyMs": null,
+      "nowPlaying": null,
+      "scheduleUrl": "",
+      "website": "https://www.kuow.org",
+      "socials": {
+        "twitter": "",
+        "instagram": ""
+      },
+      "dialPosition": 73,
+      "band": "FM",
+      "hdChannel": "",
+      "priority": 1,
+      "name": "KUOW 94.9 - Seattle (NPR)",
+      "frequency": "94.9",
+      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KUOWFM_HIGH_MP3.mp3"
+    },
+    {
+      "genre": "news",
+      "format": "fm",
+      "location": {
         "city": "Madison",
         "state": "WI",
         "country": "US"
@@ -590,7 +632,7 @@
       "band": "FM",
       "hdChannel": "",
       "priority": 1,
-      "name": "WPR News (Wisconsin Public Radio)",
+      "name": "WPR News - Madison (NPR)",
       "frequency": "90.9",
       "url": "https://wpr-ice.streamguys1.com/wpr-ideas-mp3-64"
     },
@@ -874,46 +916,6 @@
       "url": "https://ice2.somafm.com/suburbsofgoa-128-mp3"
     },
     {
-      "genre": "rock",
-      "format": "fm",
-      "location": {
-        "city": "Dallas",
-        "state": "TX",
-        "country": "US"
-      },
-      "language": "en",
-      "bitrate": 128,
-      "codec": "aac",
-      "logo": "",
-      "description": "",
-      "tags": [
-        "local",
-        "rock"
-      ],
-      "favorite": false,
-      "lastPlayed": null,
-      "popularity": null,
-      "streamType": "shoutcast",
-      "isLive": true,
-      "fallbackUrls": [],
-      "status": "unknown",
-      "latencyMs": null,
-      "nowPlaying": null,
-      "scheduleUrl": "",
-      "website": "",
-      "socials": {
-        "twitter": "",
-        "instagram": ""
-      },
-      "dialPosition": 23,
-      "band": "FM",
-      "hdChannel": "",
-      "priority": 1,
-      "name": "93.3 The Bone / Hot 93.3 (DFW)",
-      "frequency": "93.3",
-      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KLFFFMAAC.aac"
-    },
-    {
       "genre": "country",
       "format": "fm",
       "location": {
@@ -1027,7 +1029,7 @@
       "band": "FM",
       "hdChannel": "",
       "priority": 1,
-      "name": "WNYC (New York)",
+      "name": "WNYC - New York (NPR)",
       "frequency": "93.9",
       "url": "https://fm939.wnyc.org/wnycfm"
     },
@@ -1189,46 +1191,6 @@
       "name": "SomaFM Secret Agent",
       "frequency": "95.1",
       "url": "https://ice2.somafm.com/secretagent-128-mp3"
-    },
-    {
-      "genre": "country",
-      "format": "fm",
-      "location": {
-        "city": "Dallas",
-        "state": "TX",
-        "country": "US"
-      },
-      "language": "en",
-      "bitrate": 128,
-      "codec": "mp3",
-      "logo": "",
-      "description": "",
-      "tags": [
-        "local",
-        "country"
-      ],
-      "favorite": false,
-      "lastPlayed": null,
-      "popularity": null,
-      "streamType": "icecast",
-      "isLive": true,
-      "fallbackUrls": [],
-      "status": "unknown",
-      "latencyMs": null,
-      "nowPlaying": null,
-      "scheduleUrl": "",
-      "website": "",
-      "socials": {
-        "twitter": "",
-        "instagram": ""
-      },
-      "dialPosition": 31,
-      "band": "FM",
-      "hdChannel": "",
-      "priority": 1,
-      "name": "KHYI 95.3 The Range (DFW)",
-      "frequency": "95.3",
-      "url": "https://khyi.com"
     },
     {
       "genre": "electronic",
@@ -2133,7 +2095,7 @@
       "band": "FM",
       "hdChannel": "",
       "priority": 1,
-      "name": "NPR",
+      "name": "NPR - National feed (no city/state)",
       "frequency": "102.9",
       "url": "http://npr-ice.streamguys1.com/live.mp3"
     },
